@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Room Allotment · 22–23 December</title>
+<meta name="description" content="Guest room allotment for the wedding, 22–23 December.">
+<meta property="og:title" content="Room Allotment · 22–23 December">
+<meta property="og:description" content="Find your room: Odissey, Greenland Resort and Airbnb.">
+<meta property="og:type" content="website">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@400;500;600&display=swap');
+
+  :root {
+    --ivory: #F8EFE1;
+    --ink: #3A2620;
+    --muted: #8A7256;
+    --border: #E8D9BE;
+    --maroon: #6B1B2A;
+    --maroon-dark: #430D18;
+    --gold: #B98D3E;
+    --gold-light: #E6C77E;
+    --emerald: #1E4B3C;
+    --emerald-dark: #0F2E24;
+    --terracotta: #B15B44;
+    --terracotta-dark: #7A3A29;
+    --panel: #FFFDF8;
+
+    --twin: #3B6E91;    --twin-bg: #EEF4F8;
+    --double: #5C7A3A;  --double-bg: #F2F6EA;
+    --suite: #A14C68;   --suite-bg: #FBF0F3;
+    --premium: #A2731C; --premium-bg: #FBF3E4;
+    --deluxe: #2B6B54;  --deluxe-bg: #EEF7F2;
+    --superdlx: #5B4A8A;--superdlx-bg: #F3F1FA;
+  }
+
+  * { box-sizing: border-box; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+  body {
+    margin: 0;
+    padding: 48px 24px 90px 24px;
+    background-color: var(--ivory);
+    background-image: radial-gradient(circle at 1px 1px, rgba(185,141,62,0.13) 1px, transparent 0);
+    background-size: 24px 24px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--ink);
+  }
+
+  .page { max-width: 1180px; margin: 0 auto; }
+
+  .eyebrow {
+    text-align: center;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    animation: fadeUp .6s ease both;
+  }
+
+  .main-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 46px;
+    letter-spacing: 0.5px;
+    color: var(--gold);
+    margin: 0 0 8px 0;
+    animation: fadeUp .6s ease both .05s;
+  }
+  @supports ((-webkit-background-clip:text) or (background-clip:text)) {
+    .main-title {
+      background: linear-gradient(180deg, #F0DBA3 0%, var(--gold) 48%, #8A6423 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  .subtitle {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--maroon);
+    opacity: 0.85;
+    margin-bottom: 16px;
+    animation: fadeUp .6s ease both .1s;
+  }
+
+  .divider-wrap { display: flex; justify-content: center; margin-bottom: 30px; animation: fadeUp .6s ease both .15s; }
+
+  .progress-bar-wrap { max-width: 420px; margin: 0 auto 8px auto; }
+  .progress-track { height: 7px; background: #EFE1C4; border-radius: 6px; overflow: hidden; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); width: 0%; transition: width .4s ease; border-radius: 6px; }
+  .progress-label { text-align: center; font-size: 12.5px; color: var(--muted); margin-top: 6px; font-weight: 500; }
+
+  .toolbar { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 40px; flex-wrap: wrap; }
+
+  .tool-btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    color: var(--maroon);
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 7px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .15s;
+  }
+  .tool-btn:hover { background: #FBEAF0; border-color: #E0B4B4; }
+  .tool-btn.danger { color: var(--terracotta-dark); }
+  .sync-status { font-size: 11.5px; color: var(--muted); }
+
+  .venue-block {
+    position: relative;
+    overflow: hidden;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 30px 30px 32px 30px;
+    margin-bottom: 34px;
+    box-shadow: 0 6px 20px rgba(107,27,42,0.07);
+    animation: fadeUp .6s ease both;
+  }
+  .venue-block::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; }
+  #venueContainer .venue-block:nth-of-type(1) { animation-delay: .05s; }
+  #venueContainer .venue-block:nth-of-type(2) { animation-delay: .15s; }
+  #venueContainer .venue-block:nth-of-type(3) { animation-delay: .25s; }
+
+  .venue-odyssey::before   { background: linear-gradient(90deg, var(--maroon), var(--gold)); }
+  .venue-greenland::before { background: linear-gradient(90deg, var(--emerald), var(--gold)); }
+  .venue-airbnb::before    { background: linear-gradient(90deg, var(--terracotta), var(--gold)); }
+
+  .venue-header { display: flex; align-items: center; gap: 16px; margin-bottom: 26px; }
+
+  .venue-icon {
+    width: 58px; height: 58px;
+    border-radius: 50%;
+    border: 3px double var(--gold);
+    color: #FBEFD8;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    flex-shrink: 0;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  }
+  .venue-odyssey .venue-icon   { background: linear-gradient(135deg, var(--maroon), var(--maroon-dark)); }
+  .venue-greenland .venue-icon { background: linear-gradient(135deg, var(--emerald), var(--emerald-dark)); }
+  .venue-airbnb .venue-icon    { background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark)); }
+
+  .venue-title { font-family: 'Playfair Display', serif; font-size: 25px; font-weight: 700; margin: 0; }
+  .venue-odyssey .venue-title   { color: var(--maroon); }
+  .venue-greenland .venue-title { color: var(--emerald); }
+  .venue-airbnb .venue-title    { color: var(--terracotta-dark); }
+  .venue-sub { font-size: 12.5px; color: var(--muted); margin: 3px 0 0 0; }
+
+  .map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px dotted rgba(185,141,62,0.5);
+    transition: color .15s, border-color .15s;
+  }
+  .map-link:hover { color: var(--maroon); border-color: var(--maroon); }
+  .map-link svg { flex-shrink: 0; }
+
+  .date-section { margin-bottom: 10px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+  .date-section:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .date-label {
+    display: inline-block;
+    background: #F7ECC9;
+    color: var(--maroon);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+
+  .type-group { margin-bottom: 22px; }
+  .type-group:last-child { margin-bottom: 0; }
+
+  .type-group-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; padding-left: 2px; }
+  .type-icon { display: inline-flex; align-items: center; justify-content: center; }
+  .type-icon svg { display: block; }
+  .type-group-name { font-size: 13px; font-weight: 600; letter-spacing: 0.3px; }
+  .type-group-count { font-size: 11.5px; color: var(--muted); font-weight: 400; }
+
+  .type-group-body { display: flex; flex-wrap: wrap; gap: 10px; padding: 14px; border-radius: 14px; }
+
+  .twin .type-icon { color: var(--twin); }        .twin .type-group-name { color: var(--twin); }        .twin .type-group-body { background: var(--twin-bg); }
+  .double .type-icon { color: var(--double); }     .double .type-group-name { color: var(--double); }     .double .type-group-body { background: var(--double-bg); }
+  .suite .type-icon { color: var(--suite); }       .suite .type-group-name { color: var(--suite); }       .suite .type-group-body { background: var(--suite-bg); }
+  .premium .type-icon { color: var(--premium); }   .premium .type-group-name { color: var(--premium); }   .premium .type-group-body { background: var(--premium-bg); }
+  .deluxe .type-icon { color: var(--deluxe); }     .deluxe .type-group-name { color: var(--deluxe); }     .deluxe .type-group-body { background: var(--deluxe-bg); }
+  .superdlx .type-icon { color: var(--superdlx); } .superdlx .type-group-name { color: var(--superdlx); } .superdlx .type-group-body { background: var(--superdlx-bg); }
+
+  .room-card {
+    position: relative;
+    width: 150px;
+    border-radius: 12px;
+    padding: 12px 12px 13px 12px;
+    background: #FFFFFF;
+    border: 1px solid rgba(185,141,62,0.30);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .room-card:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(107,27,42,0.10); }
+  .room-card::after { content: ''; position: absolute; top: 9px; right: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); opacity: 0.5; }
+
+  .room-no { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 9px; }
+
+  .allot-input {
+    width: 100%;
+    border: none;
+    border-bottom: 1.4px dashed #D9C39A;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12.5px;
+    font-style: italic;
+    color: var(--muted);
+    padding: 5px 2px 7px 2px;
+    outline: none;
+    transition: border-color .15s, color .15s;
+  }
+  .allot-input::placeholder { color: #CBB68C; font-style: italic; }
+  .allot-input:focus { border-bottom-color: var(--gold); border-bottom-style: solid; }
+  .allot-input.has-value { font-style: normal; font-weight: 500; color: var(--ink); border-bottom-color: var(--gold); border-bottom-style: solid; }
+
+  .airbnb-feature {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: #FDF5F0;
+    border: 1px solid #EFD2C2;
+    border-radius: 16px;
+    padding: 22px 24px;
+  }
+  .airbnb-text { flex: 1; min-width: 200px; }
+  .airbnb-heading { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px; color: var(--terracotta-dark); margin-bottom: 4px; }
+  .airbnb-sub-text { font-size: 12px; color: var(--muted); line-height: 1.55; }
+  .airbnb-input-wrap { flex: 1; min-width: 220px; }
+  .airbnb-input { font-size: 14px; padding: 9px 4px; }
+
+  .summary-block {
+    background: linear-gradient(135deg, var(--maroon-dark), var(--maroon));
+    border: 1px solid rgba(185,141,62,0.4);
+    border-radius: 20px;
+    padding: 30px 34px;
+    color: #FBF0DA;
+    animation: fadeUp .6s ease both .3s;
+  }
+
+  .summary-title { font-family: 'Playfair Display', serif; font-size: 23px; font-weight: 700; margin: 0 0 18px 0; text-align: center; color: #F3E2B8; }
+
+  .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px; }
+
+  .summary-item {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(243,226,184,0.25);
+    border-radius: 10px;
+    padding: 10px 14px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13px;
+  }
+  .summary-item .venue-name { color: #F3E2B8; font-weight: 600; }
+  .summary-item .count { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: #F0A98A; }
+
+  .total-strip { margin-top: 20px; text-align: center; font-size: 14px; font-weight: 600; letter-spacing: 1.5px; color: #F3E2B8; }
+  .total-number { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; margin-left: 10px; color: var(--gold-light); }
+  @supports ((-webkit-background-clip:text) or (background-clip:text)) {
+    .total-number { background: linear-gradient(180deg, #F3E2B8, var(--gold-light) 60%, #B98D3E); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  }
+
+  .note { text-align: center; font-size: 12px; color: var(--muted); margin-top: 22px; font-style: italic; }
+
+  .save-toast {
+    position: fixed; bottom: 22px; left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--ink); color: #F3E2B8;
+    font-size: 12.5px; padding: 9px 18px; border-radius: 20px;
+    opacity: 0; transition: opacity .25s, transform .25s;
+    pointer-events: none; max-width: 90vw; text-align: center;
+  }
+  .save-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .save-toast.error { background: #7A2A2A; }
+
+  @media (max-width: 480px) {
+    body { padding: 36px 14px 80px 14px; }
+    .main-title { font-size: 32px; }
+    .venue-block { padding: 22px 16px 24px 16px; }
+    .venue-icon { width: 48px; height: 48px; font-size: 19px; }
+    .venue-title { font-size: 20px; }
+    .room-card { width: 130px; }
+    .summary-block { padding: 24px 18px; }
+  }
+  .edit-bar { max-width: 640px; margin: 0 auto 34px auto; background: #FFF8E6; border: 1px solid #EADBB0; border-radius: 14px; padding: 14px 18px; text-align: center; }
+  .edit-bar p { margin: 0 0 10px 0; font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+  .edit-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="eyebrow">22 &ndash; 23 December</div>
+  <div class="main-title">Room Allotment</div>
+  <div class="subtitle">A place for every guest</div>
+  <div class="divider-wrap">
+    <svg width="180" height="20" viewBox="0 0 180 20" aria-hidden="true">
+      <line x1="0" y1="10" x2="70" y2="10" stroke="#B98D3E" stroke-width="1.2"/>
+      <line x1="110" y1="10" x2="180" y2="10" stroke="#B98D3E" stroke-width="1.2"/>
+      <path d="M90 2l8 8-8 8-8-8z" fill="none" stroke="#B98D3E" stroke-width="1.2"/>
+      <circle cx="90" cy="10" r="2" fill="#B98D3E"/>
+    </svg>
+  </div>
+
+  <div class="progress-bar-wrap">
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-label" id="progressLabel">Loading current assignments…</div>
+  </div>
+
+  <div class="edit-bar" id="editBar" style="display:none">
+    <p>Edit mode. Names you type stay on this device only. When you finish, press Copy and paste the result into the file on GitHub.</p>
+    <div class="edit-actions"><button class="tool-btn" id="copyBtn">Copy updated page</button><button class="tool-btn danger" id="resetBtn">Clear all names</button></div>
+  </div>
+
+  <div id="venueContainer"></div>
+
+  <div class="summary-block">
+    <p class="summary-title">Overview</p>
+    <div class="summary-grid">
+      <div class="summary-item"><span class="venue-name">Odissey &bull; 22nd Dec</span><span class="count">10</span></div>
+      <div class="summary-item"><span class="venue-name">Odissey &bull; 23rd Dec</span><span class="count">32</span></div>
+      <div class="summary-item"><span class="venue-name">Greenland &bull; 22nd Dec</span><span class="count">6</span></div>
+      <div class="summary-item"><span class="venue-name">Greenland &bull; 23rd Dec</span><span class="count">24</span></div>
+      <div class="summary-item"><span class="venue-name">Airbnb &bull; Entire home</span><span class="count">1</span></div>
+    </div>
+    <div class="total-strip">TOTAL ALLOTMENTS<span class="total-number">73</span></div>
+  </div>
+
+  <p class="note">Room allotments are kept up to date by the family organiser. Refresh the page to see the latest.</p>
+
+</div>
+
+<div class="save-toast" id="saveToast">Saved</div>
+
+<script id="state" type="application/json">{}</script>
+<script>
+const ICONS = {
+  twin: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 18V8a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M14 10V8a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 14h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 18v2M21 18v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
+  double: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="7" rx="1.4" stroke="currentColor" stroke-width="1.6"/><path d="M3 11V9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M12 9v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 18v2M21 18v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
+  suite: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 17l-1.5-8L8 12l4-6 4 6 5.5-3L20 17H4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
+  premium: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 17l-1.5-8L8 12l4-6 4 6 5.5-3L20 17H4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="6" r="1.4" fill="currentColor"/></svg>',
+  deluxe: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="8" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l9 9M17 17l2-2M14.5 14.5l2-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
+  superdlx: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="7" cy="8" r="3.4" stroke="currentColor" stroke-width="1.6"/><path d="M10 11l8.5 8.5M15.5 16l1.8-1.8M13 13.5l1.8-1.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18.5 4l.6 1.6 1.6.6-1.6.6-.6 1.6-.6-1.6-1.6-.6 1.6-.6.6-1.6z" fill="currentColor"/></svg>'
+};
+
+const VENUES = [
+  { id:'odyssey', name:'Odissey', icon:'O', sub:'42 rooms across two days', mapLink:'https://share.google/riJ1AWPd1qN3hejAc', dates: [
+      { key:'22dec', label:'22nd December', types: [
+          { type:'Twin bed', cls:'twin', count:4, prefix:'T' },
+          { type:'Double bed', cls:'double', count:6, prefix:'D' }
+        ]},
+      { key:'23dec', label:'23rd December', types: [
+          { type:'Twin bed', cls:'twin', count:12, prefix:'T' },
+          { type:'Double bed', cls:'double', count:18, prefix:'D' },
+          { type:'Premium suite', cls:'premium', count:2, prefix:'S' }
+        ]}
+    ]},
+  { id:'greenland', name:'Greenland Resort', icon:'G', sub:'30 rooms across two days', mapLink:'https://www.google.com/travel/hotels/s/Ly54FJ6V4PWpon2U8', dates:[
+      { key:'22dec', label:'22nd December', types:[
+          { type:'Deluxe', cls:'deluxe', count:5, prefix:'DX' },
+          { type:'Suite', cls:'suite', count:1, prefix:'S' }
+        ]},
+      { key:'23dec', label:'23rd December', types:[
+          { type:'Deluxe', cls:'deluxe', count:8, prefix:'DX' },
+          { type:'Super deluxe', cls:'superdlx', count:12, prefix:'SD' },
+          { type:'Suite', cls:'suite', count:4, prefix:'S' }
+        ]}
+    ]},
+  { id:'airbnb', name:'Airbnb', icon:'A', sub:'One allotment for the whole home', dates:[
+      { key:'22dec', label:'22nd December', types:[
+          { type:'Entire 3BHK Home', cls:'homefeature', count:1, prefix:'HOME' }
+        ]}
+    ]}
+];
+
+const STORAGE_PREFIX = 'wedding-room-allotment';
+function groupKeyFor(venueId, dateKey) { return `${STORAGE_PREFIX}::${venueId}::${dateKey}`; }
+
+const ALL_GROUP_KEYS = [];
+VENUES.forEach(v => v.dates.forEach(d => ALL_GROUP_KEYS.push(groupKeyFor(v.id, d.key))));
+
+let groupCache = {};
+let totalRooms = 0;
+const saveTimers = {};
+
+const EDIT = new URLSearchParams(location.search).has('edit');
+const DRAFT_KEY = 'room-allotment-draft-v1';
+let readOnly = !EDIT;
+
+function loadAll() {
+  try { groupCache = JSON.parse(document.getElementById('state').textContent || '{}'); } catch (e) { groupCache = {}; }
+  if (EDIT) {
+    try { const d = localStorage.getItem(DRAFT_KEY); if (d) groupCache = JSON.parse(d); } catch (e) {}
+  }
+  ALL_GROUP_KEYS.forEach(g => { if (!groupCache[g]) groupCache[g] = {}; });
+}
+
+function makeInput(groupKey, roomLabel, value, extraClass) {
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.className = 'allot-input' + (extraClass ? ' ' + extraClass : '');
+  input.placeholder = 'Guest or family name';
+  input.dataset.group = groupKey;
+  input.dataset.room = roomLabel;
+  input.value = value || '';
+  if (input.value) input.classList.add('has-value');
+  input.addEventListener('input', () => {
+    input.classList.toggle('has-value', input.value.trim().length > 0);
+    updateProgress();
+  });
+  input.addEventListener('change', () => scheduleSave(groupKey, roomLabel, input.value));
+  if (readOnly) { input.readOnly = true; input.placeholder = 'Not assigned yet'; }
+  return input;
+}
+
+function render() {
+  const container = document.getElementById('venueContainer');
+  container.innerHTML = '';
+  totalRooms = 0;
+
+  VENUES.forEach(venue => {
+    const venueEl = document.createElement('div');
+    venueEl.className = `venue-block venue-${venue.id}`;
+
+    const header = document.createElement('div');
+    header.className = 'venue-header';
+    header.innerHTML = `
+      <div class="venue-icon">${venue.icon}</div>
+      <div>
+        <p class="venue-title">${venue.name}</p>
+        <p class="venue-sub">${venue.sub}${venue.mapLink ? ` &bull; <a class="map-link" href="${venue.mapLink}" target="_blank" rel="noopener noreferrer"><svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.2" stroke="currentColor" stroke-width="1.6"/></svg>View location</a>` : ''}</p>
+      </div>`;
+    venueEl.appendChild(header);
+
+    venue.dates.forEach(dateObj => {
+      const groupKey = groupKeyFor(venue.id, dateObj.key);
+      const groupData = groupCache[groupKey] || {};
+
+      const dateSection = document.createElement('div');
+      dateSection.className = 'date-section';
+
+      const dateLabel = document.createElement('div');
+      dateLabel.className = 'date-label';
+      dateLabel.textContent = dateObj.label;
+      dateSection.appendChild(dateLabel);
+
+      if (venue.id === 'airbnb') {
+        const typeObj = dateObj.types[0];
+        totalRooms += typeObj.count;
+        const roomLabel = `${typeObj.prefix}-1`;
+
+        const feature = document.createElement('div');
+        feature.className = 'airbnb-feature';
+
+        const textWrap = document.createElement('div');
+        textWrap.className = 'airbnb-text';
+        textWrap.innerHTML = `
+          <div class="airbnb-heading">${typeObj.type}</div>
+          <div class="airbnb-sub-text">One family or group takes the whole house — they can sort the three bedrooms among themselves.</div>`;
+        feature.appendChild(textWrap);
+
+        const inputWrap = document.createElement('div');
+        inputWrap.className = 'airbnb-input-wrap';
+        inputWrap.appendChild(makeInput(groupKey, roomLabel, groupData[roomLabel], 'airbnb-input'));
+        feature.appendChild(inputWrap);
+
+        dateSection.appendChild(feature);
+      } else {
+        dateObj.types.forEach(typeObj => {
+          totalRooms += typeObj.count;
+
+          const typeGroup = document.createElement('div');
+          typeGroup.className = `type-group ${typeObj.cls}`;
+
+          const typeHeader = document.createElement('div');
+          typeHeader.className = 'type-group-header';
+          typeHeader.innerHTML = `
+            <span class="type-icon">${ICONS[typeObj.cls] || ''}</span>
+            <span class="type-group-name">${typeObj.type}</span>
+            <span class="type-group-count">(${typeObj.count} room${typeObj.count > 1 ? 's' : ''})</span>`;
+          typeGroup.appendChild(typeHeader);
+
+          const typeBody = document.createElement('div');
+          typeBody.className = 'type-group-body';
+
+          for (let i = 1; i <= typeObj.count; i++) {
+            const roomLabel = `${typeObj.prefix}-${i}`;
+            const card = document.createElement('div');
+            card.className = 'room-card';
+
+            const roomNoEl = document.createElement('div');
+            roomNoEl.className = 'room-no';
+            roomNoEl.textContent = roomLabel;
+
+            card.appendChild(roomNoEl);
+            card.appendChild(makeInput(groupKey, roomLabel, groupData[roomLabel]));
+            typeBody.appendChild(card);
+          }
+
+          typeGroup.appendChild(typeBody);
+          dateSection.appendChild(typeGroup);
+        });
+      }
+
+      venueEl.appendChild(dateSection);
+    });
+
+    container.appendChild(venueEl);
+  });
+
+  updateProgress();
+}
+
+function updateProgress() {
+  const inputs = document.querySelectorAll('.allot-input');
+  let filled = 0;
+  inputs.forEach(inp => { if (inp.value.trim().length > 0) filled++; });
+  const pct = totalRooms ? Math.round((filled / totalRooms) * 100) : 0;
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `${filled} of ${totalRooms} allotments made`;
+}
+
+function saveDraft() {
+  try { localStorage.setItem(DRAFT_KEY, JSON.stringify(groupCache)); } catch (e) {}
+}
+
+function scheduleSave(groupKey, roomLabel, value) {
+  if (!groupCache[groupKey]) groupCache[groupKey] = {};
+  groupCache[groupKey][roomLabel] = value;
+  saveDraft();
+  showToast('Kept on this device');
+}
+
+function showToast(msg, isError) {
+  const toast = document.getElementById('saveToast');
+  toast.textContent = msg;
+  toast.classList.toggle('error', !!isError);
+  toast.classList.add('show');
+  clearTimeout(showToast._t);
+  showToast._t = setTimeout(() => toast.classList.remove('show'), 2200);
+}
+
+function buildHtml() {
+  const clone = document.documentElement.cloneNode(true);
+  clone.querySelector('#venueContainer').innerHTML = '';
+  clone.querySelector('#state').textContent = JSON.stringify(groupCache).replace(/</g, '\\u003c');
+  clone.querySelector('#saveToast').className = 'save-toast';
+  clone.querySelector('#editBar').style.display = 'none';
+  return '<!DOCTYPE html>\n' + clone.outerHTML;
+}
+
+async function copyPage() {
+  const text = buildHtml();
+  try {
+    await navigator.clipboard.writeText(text);
+    showToast('Copied. Now paste it into GitHub');
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;opacity:0';
+    document.body.appendChild(ta);
+    ta.select();
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (err) {}
+    document.body.removeChild(ta);
+    showToast(ok ? 'Copied. Now paste it into GitHub' : 'Copy failed. Please try again', !ok);
+  }
+}
+
+loadAll();
+render();
+
+if (EDIT) {
+  document.getElementById('editBar').style.display = '';
+  document.getElementById('copyBtn').addEventListener('click', copyPage);
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    if (!confirm('Clear every name on this device? This cannot be undone.')) return;
+    ALL_GROUP_KEYS.forEach(g => { groupCache[g] = {}; });
+    saveDraft();
+    render();
+  });
+}
+</script>
+</body>
+</html>
